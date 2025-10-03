@@ -1,0 +1,32 @@
+name: Deploy PRODUCTION
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-production:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Deploy para PRODUÇÃO
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER_PROD }}
+          username: ${{ secrets.FTP_USERNAME_PROD }}
+          password: ${{ secrets.FTP_PASSWORD_PROD }}
+          server-dir: public_html/
+          exclude: |
+            .git/**
+            .github/**
+            .idea/**
+            node_modules/**
+            vendor/**
+            tests/**
+            .DS_Store
+            README*
+            *.md

@@ -1,0 +1,101 @@
+@use "sass:map";
+@use 'breakpoints' as *;
+
+@mixin responsive($breakpoint-name, $direction: max) {
+  @if map.has-key($breakpoints, $breakpoint-name) {
+    $value: map.get($breakpoints, $breakpoint-name);
+
+    @if $direction == max {
+      @media (max-width: $value) {
+        @content;
+      }
+    } @else if $direction == min {
+      @media (min-width: $value) {
+        @content;
+      }
+    } @else {
+      @warn "Direção inválida: use 'min' ou 'max'";
+    }
+  } @else {
+    @warn "Breakpoint que você definiu não existe";
+  }
+}
+
+@mixin transition($time: 0.3s) {
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-duration: $time;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+@mixin flex-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-total-center {
+  @include flex-center;
+  justify-content: center;
+}
+
+@mixin flex-center-justify {
+  @include flex-center;
+  justify-content: space-between;
+}
+
+@mixin flex-start-justify {
+  @include flex-start;
+  justify-content: space-between;
+}
+
+@mixin flex-end-justify {
+  @include flex-end;
+  justify-content: space-between;
+}
+
+@mixin flex-total-start {
+  @include flex-start;
+  justify-content: flex-start;
+}
+
+@mixin flex-center-start {
+  @include flex-center;
+  justify-content: flex-start;
+}
+
+@mixin flex-total-start {
+  @include flex-end;
+  justify-content: flex-start;
+}
+
+@mixin flex-start-end {
+  @include flex-start;
+  justify-content: flex-end;
+}
+
+@mixin flex-center-end {
+  @include flex-center;
+  justify-content: flex-end;
+}
+
+@mixin flex-total-end {
+  @include flex-end;
+  justify-content: flex-end;
+}
+
+@mixin truncate($lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}

@@ -1,0 +1,19 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-primary;
+  line-height: var(--line-normal);
+}
+
+p,
+span {
+  font-family: $font-primary;
+  line-height: var(--line-longest);
+}

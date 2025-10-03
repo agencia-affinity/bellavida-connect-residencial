@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "sass:math";
+
+@function rem($px, $base: 16) {
+  @return math.div($px, $base) * 1rem;
+}
+
+@function fluid($min-px, $max-px, $vw: 100) {
+  @return clamp(rem($min-px), ($max-px / $vw) * 100vw, rem($max-px));
+}

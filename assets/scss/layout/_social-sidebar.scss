@@ -1,0 +1,117 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+
+// Cores das redes sociais
+$social-colors: (
+        facebook: #3b5998,
+        instagram: #ea4c89,
+        youtube: #e34429,
+        linkedin: #8487f3,
+        whatsapp: #5cb415,
+);
+
+#social-sidebar {
+  position: fixed;
+  top: 47%;
+  right: 0.625rem;
+  z-index: 99;
+
+  li {
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  a {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: var(--accent-01);
+    color: $white;
+    text-decoration: none;
+    display: block;
+    width: rem(50);
+    height: rem(50);
+    font-size: rem(24);
+    line-height: rem(50);
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    @include transition(0.3s);
+
+    &:hover {
+      background: var(--accent-01);
+      color: $white;
+    }
+
+    span {
+      font: rem(12) $font-primary, sans-serif;
+      text-transform: uppercase;
+      border-radius: rem(3);
+      line-height: rem(24);
+      left: 100%;
+      margin-top: rem(-16);
+      opacity: 0;
+      padding: rem(4) rem(8);
+      position: absolute;
+      top: 50%;
+      z-index: -1;
+      transition: opacity 0.3s, left 0.4s;
+
+      &::before {
+        content: '';
+        display: block;
+        width: rem(8);
+        height: rem(8);
+        position: absolute;
+        top: 50%;
+        right: -4px;
+        margin-top: -4px;
+        transform: rotate(45deg);
+      }
+    }
+
+    &:hover {
+      span {
+        left: -150%;
+        opacity: 1;
+      }
+
+      .link_facebook {
+        left: -173%;
+      }
+
+      .link_instagram {
+        left: -188%;
+      }
+
+      .link_youtube {
+        left: -165%;
+      }
+
+      .link_linkedin {
+        left: -152%;
+      }
+
+      .link_phone {
+        left: -161%;
+      }
+
+      .link_whatsapp {
+        left: -174%;
+      }
+    }
+  }
+
+  // Loop para gerar cores das redes
+  @each $network, $color in $social-colors {
+    a[class*='#{$network}'] {
+      &:hover,
+      span,
+      span::before {
+        background: $color;
+      }
+    }
+  }
+}
