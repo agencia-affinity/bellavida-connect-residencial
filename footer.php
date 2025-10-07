@@ -56,8 +56,9 @@
 </footer>
 
 <?php include 'inc/components/copy.php'; ?>
-
+<script src="assets/js/lib/jquery.min.js"></script>
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/all.js"></script>
+<script src="assets/js/scripts/form.js"></script>
 </body>
 </html>

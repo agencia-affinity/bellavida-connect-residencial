@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Se for arquivo ou diretório, não reescreve
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Se existir um arquivo .php com o nome digitado, carrega ele
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L]
+
+# Opcional: redireciona para index.php (se existir lógica de rotas na pasta)
+# RewriteRule ^(.*)$ index.php/$1 [L]
