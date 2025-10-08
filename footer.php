@@ -1,5 +1,5 @@
 <a class="whatsapp-fab" href="https://wa.me/551926602525" target="_blank" rel="noopener noreferrer">
-  <i class="fa-brands fa-whatsapp"></i>
+    <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 
@@ -8,14 +8,14 @@
         <div class="top-area">
             <figure class="left">
                 <img src="assets/images/illustras/letter-01.svg"
-                     alt="Imagem com o escrito 2 dormitórios com varanda, opções de 1 ou duas vagas de garagem"
-                     title="2 dormitórios com varanda, opções de 1 ou duas vagas de garagem">
+                    alt="Imagem com o escrito 2 dormitórios com varanda, opções de 1 ou duas vagas de garagem"
+                    title="2 dormitórios com varanda, opções de 1 ou duas vagas de garagem">
             </figure>
 
             <figure class="middle">
                 <img src="assets/images/illustras/letter-02.svg"
-                     alt="Imagem com o escrito Aparamentos 49 a 58m², Tipo ou Garden"
-                     title="Aparamentos 49 a 58m², Tipo ou Garden">
+                    alt="Imagem com o escrito Aparamentos 49 a 58m², Tipo ou Garden"
+                    title="Aparamentos 49 a 58m², Tipo ou Garden">
             </figure>
 
             <div class="right-area">
@@ -61,9 +61,15 @@
 </footer>
 
 <?php include 'inc/components/copy.php'; ?>
+<!-- Google Tag Manager (noscript) -->
+ <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K24GCJMD" height="0" width="0" style="display:none;visibility:hidden">
+ </iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
 <script src="assets/js/lib/jquery.min.js"></script>
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/all.js"></script>
 <script src="assets/js/scripts/form.js"></script>
 </body>
+
 </html>
