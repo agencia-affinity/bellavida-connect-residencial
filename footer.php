@@ -1,3 +1,8 @@
+<a class="whatsapp-fab" href="https://wa.me/551926602525" target="_blank" rel="noopener noreferrer">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
 <footer>
     <div class="container">
         <div class="top-area">

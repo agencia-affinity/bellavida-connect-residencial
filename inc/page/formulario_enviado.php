@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="refresh" content="4;url=https://bellavidaconnect.com.br" />
   <title>Bella Vida Connect</title>
-      <link rel="stylesheet" href="assets/css/page_obrigado.css">
+      <link rel="stylesheet" href="https://bellavidaconnect.com.br/assets/css/page_obrigado.css">
 
 </head>
 <body>
